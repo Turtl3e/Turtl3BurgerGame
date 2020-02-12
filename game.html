@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+    <title>Turtl3 Burgers</title>
+</head>
+
+<body>
+    <div class="ready-set-go-container">
+        <h1 class="ready-set-go">
+            <span class="ready-set-go__letters ready-set-go__letters-1">Ready</span>
+            <span class="ready-set-go__letters ready-set-go__letters-2">Set</span>
+            <span class="ready-set-go__letters ready-set-go__letters-3">Go!</span>
+        </h1>
+    </div>
+
+    <div class="levels">
+        <h1 class="levels__heading">Levels</h1>
+        <!-- TODO: Not hardcode level here-->
+        <div class="levels__container">
+            <div class="level" onclick="controller.loadLevel(1)">
+                <h1 class="level__number">1</h1>
+            </div>
+            <div class="level" onclick="controller.loadLevel(2)">
+                <h1 class="level__number">2</h1>
+            </div>
+        </div>
+    </div>
+    <div class="statistics">
+        <h1 class="statistics__heading">Statistics</h1>
+        <div class="statistics__container">
+            <div class="statistic">
+                <div class="statistic__image-container statistic__image-container--character">
+                    <img src="img/characters/character_1.png" alt="" srcset="">
+                </div>
+                <h1 class="statistic__number statistic__number--customers">8</h1>
+            </div>
+            <div class="statistic">
+                <div class="statistic__image-container statistic__image-container--coin">
+                    <img src="img/coin.png" alt="" srcset="">
+                </div>
+                <h1 class="statistic__number statistic__number--coins">7</h1>
+            </div>
+            <div class="statistic">
+                <div class="statistic__image-container statistic__image-container--clock">
+                    <img src="img/clock.png" alt="" srcset="">
+                </div>
+                <h1 class="statistic__number statistic__number--clock">4:23</h1>
+            </div>
+            <div class="statistic">
+                <a href="">
+                    <div class="statistic__image-container statistic__image-container--back-to-level">
+                        <img src="img/level.png" alt="" srcset="">
+                    </div>
+                    <h1 class="back-to-level">Choose level</h1>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="restaurant">
+        <div class="restaurant__points">
+            <h1 class="money">0</h1>
+        </div>
+        <div class="restaurant__background">
+            <div class="recipes">
+
+            </div>
+
+            <!--START Restaurant customers-->
+            <div class="customers">
+                <div class="customers__container">
+                    <!-- TODO: max elements x-->
+                    <div class="customer customer--0"></div>
+                    <div class="customer customer--1"></div>
+                    <div class="customer customer--2"></div>
+                    <div class="customer customer--3"></div>
+                    <div class="customer customer--4"></div>
+                    <div class="customer customer--5"></div>
+                    <div class="customer customer--6"></div>
+                    <div class="customer customer--7"></div>
+                </div>
+
+            </div>
+            <!--END Restaurant customers-->
+
+        </div>
+
+        <!--START Restaurant counter-->
+        <div class="restaurant-counter">
+            <div class="bin">
+                <i class="fas fa-trash-alt"></i>
+            </div>
+            <div class="restaurant-counter__burger">
+                <div class="burger">
+
+                </div>
+            </div>
+            <div class="restaurant-counter__breads">
+                <div class="breads breads--bottoms">
+                    <img onclick="controller.addIngredientToBurger(this.dataset.ingredient)"
+                        data-ingredient="bottomOfBurger" src="img/bottomSlices.png" alt="" srcset="">
+                </div>
+                <div class="breads breads--tops">
+                    <img src="img/tops.png" onclick="controller.addIngredientToBurger(this.dataset.ingredient)"
+                        data-ingredient="topOfBurger" alt="" srcset="">
+                </div>
+            </div>
+            <div class="restaurant-counter__ingredients">
+                <div class="ingredients-counter">
+                    <img class="ingredients-counter__img" src="img/counter/ingredientsCounter.png" alt="" srcset="">
+                    <img class="ingredient ingredient__tomato"
+                        onclick="controller.addIngredientToBurger(this.dataset.ingredient)"
+                        src="img/ingredients/tomatoComponent.png" data-ingredient="tomato" alt="" srcset="">
+                    <img class="ingredient ingredient__burger"
+                        onclick="controller.addIngredientToBurger(this.dataset.ingredient)"
+                        src="img/ingredients/burgerSliceTranformed.png" data-ingredient="burgerMeat" alt="" srcset="">
+                    <img class="ingredient ingredient__cheese"
+                        onclick="controller.addIngredientToBurger(this.dataset.ingredient)"
+                        src="img/ingredients/cheeseSlice.png" data-ingredient="cheese" alt="" srcset="">
+                    <img class="ingredient ingredient__leaf"
+                        onclick="controller.addIngredientToBurger(this.dataset.ingredient)"
+                        src="img/ingredients/leafSlice.png" data-ingredient="lettuce" alt="" srcset="">
+                </div>
+            </div>
+            <!--END Restaurant counter-->
+        </div>
+    </div>
+    <script src="scripts/interact.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/6.1.0/rxjs.umd.js"></script>
+    <script src="scripts/UI.js"></script>
+    <script src="scripts/AudioManager.js"></script>
+    <script src="scripts/Model.js"></script>
+    <script src="scripts/View.js"></script>
+    <script src="scripts/Controller.js"></script>
+
+</body>
+
+</html>
